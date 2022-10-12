@@ -7,6 +7,7 @@ import {useParams} from "react-router-dom";
 function Subreddit() {
     const [subreddit, setSubreddit] = useState({});
     const { id } = useParams();
+    // zou ik ook meerdere useParams in kunnen stellen of altijd maar 1?
 
     useEffect(() => {
         async function fetchCategories() {
