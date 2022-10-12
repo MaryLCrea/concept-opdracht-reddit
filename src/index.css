@@ -1,11 +1,16 @@
-/*Rood #dd3038;*/
-/*Oranje #e7613a;*/
-/*Licht oranje #FDF4F2;*/
-/*Zwart #292929 (voor standaard tekst);*/
-/*Wit #FFFFFF;*/
-
-
 @import url('https://fonts.googleapis.com/css?family=Roboto Condensed');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Quicksand', 'Arial', sans-serif;
+    line-height: 2;
+    color: black;
+}
+
 
 * {
     font-family: roboto condensed, serif;
