@@ -1,38 +1,27 @@
 import React from 'react';
 import './Header.css';
-import {NavLink, Route, Switch, useParams} from 'react-router-dom';
-import HomePage from "../../pages/home/Home";
-import RedditPagina from "../../pages/subreddit/Subreddit";
-import MemesPagina from "../../pages/memes/Memes";
+import {Link} from 'react-router-dom';
 import logo from "../../assets/logo.png";
 
-function Header() {
-    const {id} = useParams
-    return(
-        <>
-        <nav>
-            <div>
+function Header({children}) {
+     return(
+            <header>
+             <div>
                 <img src={logo} alt="logo" />
                 <h2>Reddit</h2>
+                <nav>
                 <ul>
-                    <li><NavLink to="/" >Home</NavLink></li>
-                    <li><NavLink to="/Subreddit/:id">Reddit</NavLink></li>
-                    <li><NavLink to="/Memes" >Memes</NavLink></li>
+                    <li><Link to="/">Hottest posts</Link></li>
+                    <li><a href="https://www.reddit.com/">Reddit</a></li>
+                    <li><Link to="/subreddit/memes">Memes</Link></li>
                 </ul>
+                </nav>
+            <div className="hero-content">
+                {children}
+                {/*waarom moet hier {children} staan en hoe had ik dat kunnen weten?*/}
             </div>
-        </nav>
-    <Switch>
-                <Route exact path="/">
-                    <HomePage/>
-                </Route>
-                <Route exact path="/subreddit">
-                    <RedditPagina />
-                </Route>
-                <Route exact path="/memes">
-                    <MemesPagina/>
-                </Route>
-            </Switch>
-            </>
-         );
+             </div>
+             </header>
+                );
 }
 export default Header;
